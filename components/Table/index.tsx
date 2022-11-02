@@ -1,54 +1,17 @@
-import { FunctionComponent } from 'react';
+import { ColumnDef } from "@tanstack/react-table";
+import { FunctionComponent } from "react";
 
-import { DataTable } from './DataTable';
+import { DataTable } from "./DataTable";
 
-interface TableProps {}
+interface TableProps {
+  columns: ColumnDef<any, any>[];
+  data: { name: string; message: string }[];
+}
 
-type UnitConversion = {
-  fromUnit: string;
-  toUnit: string;
-  factor: number;
-};
-
-const data: UnitConversion[] = [
-  {
-    fromUnit: "inches",
-    toUnit: "millimetres (mm)",
-    factor: 25.4,
-  },
-  {
-    fromUnit: "feet",
-    toUnit: "centimetres (cm)",
-    factor: 30.48,
-  },
-  {
-    fromUnit: "yards",
-    toUnit: "metres (m)",
-    factor: 0.91444,
-  },
-];
-
-// const columnHelper = createColumnHelper<UnitConversion>();
-
-// const columns = [
-//   columnHelper.accessor("fromUnit", {
-//     cell: (info) => info.getValue(),
-//     header: "To convert",
-//   }),
-//   columnHelper.accessor("toUnit", {
-//     cell: (info) => info.getValue(),
-//     header: "Into",
-//   }),
-//   columnHelper.accessor("factor", {
-//     cell: (info) => info.getValue(),
-//     header: "Multiply by",
-//     meta: {
-//       isNumeric: true,
-//     },
-//   }),
-// ];
-
-const Table: FunctionComponent<TableProps> = ({ columns, data }: any) => {
+const Table: FunctionComponent<TableProps> = ({
+  columns,
+  data,
+}: TableProps) => {
   return <DataTable columns={columns} data={data} />;
 };
 
