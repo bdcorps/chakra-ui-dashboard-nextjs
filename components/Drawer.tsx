@@ -100,6 +100,38 @@ const SidebarContents = () => {
               <Image w={4} h={4} src="/settings.svg" alt="logo" />
               <LinkItem
                 icon={<InfoOutlineIcon />}
+                title="Your Sites"
+                url="/sites"
+              />
+            </HStack>
+
+            <HStack
+              spacing={3}
+              w="full"
+              _hover={{ color: "#e6e6e6", bg: "#222c3a" }}
+              px={2}
+              py={1}
+              rounded="sm"
+            >
+              <Image w={4} h={4} src="/settings.svg" alt="logo" />
+              <LinkItem
+                icon={<InfoOutlineIcon />}
+                title="Configure SEO"
+                url="/settings/seo"
+              />
+            </HStack>
+
+            <HStack
+              spacing={3}
+              w="full"
+              _hover={{ color: "#e6e6e6", bg: "#222c3a" }}
+              px={2}
+              py={1}
+              rounded="sm"
+            >
+              <Image w={4} h={4} src="/settings.svg" alt="logo" />
+              <LinkItem
+                icon={<InfoOutlineIcon />}
                 title="Settings"
                 url="/settings"
               />

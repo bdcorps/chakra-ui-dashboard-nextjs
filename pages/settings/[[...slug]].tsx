@@ -10,12 +10,45 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 
 import Layout from "components/Layout";
 
-export default function UIMainPage() {
-  const tabs = ["General", "Pages", "SEO", "Developer API", "Experimental"];
+interface SimpleSettingsContentProps {}
+
+const SimpleSettingsContent: FunctionComponent<
+  SimpleSettingsContentProps
+> = () => {
+  return (
+    <Box maxW="container.sm">
+      <VStack spacing={4} align="flex-start">
+        <VStack spacing={2} align="flex-start" w="full">
+          <Text fontSize="md" fontWeight={500}>
+            Name
+          </Text>
+          <Input placeholder="My Awesome Site" />
+        </VStack>
+
+        <VStack spacing={2} align="flex-start" w="full">
+          <Text fontSize="md" fontWeight={500}>
+            Description
+          </Text>
+          <Input placeholder="My Awesome Description" />
+        </VStack>
+
+        <VStack spacing={2} align="flex-start" w="full">
+          <Text fontSize="md" fontWeight={500}>
+            Brand Color
+          </Text>
+          <Input placeholder="My Awesome Color" />
+        </VStack>
+      </VStack>
+    </Box>
+  );
+};
+
+const UIMainPage = () => {
+  const tabs = ["General", "SEO"];
 
   const [selectedTab, setSelectedTab] = useState<number>(0);
 
@@ -32,7 +65,7 @@ export default function UIMainPage() {
     } else {
       setSelectedTab(0);
     }
-  }, [slug]);
+  }, [slug, tabs]);
 
   useEffect(() => {
     innerFunction();
@@ -54,45 +87,15 @@ export default function UIMainPage() {
 
         <TabPanels>
           <TabPanel>
-            <Box maxW="container.sm">
-              <VStack spacing={4} align="flex-start">
-                <VStack spacing={2} align="flex-start" w="full">
-                  <Text fontSize="md" fontWeight={500}>
-                    Name
-                  </Text>
-                  <Input placeholder="My Awesome Site" />
-                </VStack>
-
-                <VStack spacing={2} align="flex-start" w="full">
-                  <Text fontSize="md" fontWeight={500}>
-                    Description
-                  </Text>
-                  <Input placeholder="My Awesome Description" />
-                </VStack>
-
-                <VStack spacing={2} align="flex-start" w="full">
-                  <Text fontSize="md" fontWeight={500}>
-                    Brand Color
-                  </Text>
-                  <Input placeholder="My Awesome Color" />
-                </VStack>
-              </VStack>
-            </Box>
+            <SimpleSettingsContent />
           </TabPanel>
           <TabPanel>
-            <Box>Hello</Box>
-          </TabPanel>
-          <TabPanel>
-            <p>three!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>three!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>five!</p>
+            <SimpleSettingsContent />
           </TabPanel>
         </TabPanels>
       </Tabs>
     </Layout>
   );
-}
+};
+
+export default UIMainPage;
