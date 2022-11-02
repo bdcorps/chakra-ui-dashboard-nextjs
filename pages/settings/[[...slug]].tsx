@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
-import Layout from "../../components/Layout";
+import Layout from "components/Layout";
 
 export default function UIMainPage() {
   const tabs = ["General", "Pages", "SEO", "Developer API", "Experimental"];

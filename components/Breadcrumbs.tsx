@@ -2,7 +2,7 @@ import { HStack, Link, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { FunctionComponent } from "react";
 
-import { LinkType } from "../types";
+import { LinkType } from "types";
 
 interface BreadcrumbsProps {
   items: LinkType[];

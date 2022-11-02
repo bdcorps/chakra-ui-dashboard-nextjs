@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 
-import Layout from "../../components/Layout";
+import Layout from "components/Layout";
 
 interface DataProps {}
 

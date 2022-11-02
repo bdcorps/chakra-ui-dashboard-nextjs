@@ -2,7 +2,7 @@ import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 
-import { LinkType } from "../types";
+import { LinkType } from "types";
 import Breadcrumbs from "./Breadcrumbs";
 import { titleCase } from "/utils";
 

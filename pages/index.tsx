@@ -1,7 +1,7 @@
 import { AddIcon } from "@chakra-ui/icons";
 import { Box, Center, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import Layout from "components/Layout";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import Layout from "../components/Layout";
 
 export default function UIMainPage({}: InferGetServerSidePropsType<
   typeof getServerSideProps
